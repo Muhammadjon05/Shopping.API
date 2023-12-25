@@ -9,15 +9,20 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ProductFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+
     public function definition(): array
     {
         return [
-            //
+            'category_id' => rand(1,5),
+            'name' => [
+                'uz'=> fake()->sentence(3),
+                'ru'=> 'Комплекти спалной мебели'
+            ],
+            'price' =>rand(50000.0,1000000.0),
+            'description'=> [
+                'uz' => fake()->sentence(5),
+                'ru'=> 'Очен крутий мебели для използования. Матраси отличаютcя с лёгкими пузирками'
+            ]
         ];
     }
 }
